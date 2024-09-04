@@ -145,7 +145,6 @@ IS_Model::IS_Model(double simdefs[]){
 */
 void IS_Model::initialize(){
 
-  //TODO: Dúvida a respeito dos valores.
   /**
    * each (5/(pow(10,6)) = 0.0000002 days or 0,01728 secs
    */
