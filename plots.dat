@@ -1,0 +1,62 @@
+
+#############################################################
+# 20 dias sem resposta
+#############################################################
+
+set xlabel 'time (hours)'
+set ylabel 'cells/mm^3'
+set xtics 100
+set ytics 10
+
+set key center right
+plot 'output/20D_antigeno_soh/L.dat' u 0:6  title 'Antigen'
+
+set xtics 500
+plot 'output/100D_antigeno_soh/L.dat' u 0:6 title 'Antigen'
+
+#############################################################
+# 30 dias resposta inata
+#############################################################
+set xtics 100
+plot 'output/30D_inata_vaso_linf/L.dat' u 0:6 title 'Antigen'
+
+set ytics 5
+set xtics 100
+set key top
+plot 'output/30D_inata_vaso_linf/L.dat' u 0:2 title 'Activated macrophages'
+
+set ytics 1
+plot 'output/30D_inata_vaso_linf/L.dat' u 0:7 title 'Resting macrophages'
+
+
+#############################################################
+# 100 dias resposta inata
+#############################################################
+
+set xtics 500
+set ytics 10
+set key top right
+plot 'output/100D_inata/L.dat' u 0:6 w points title 'Antigen'
+
+#############################################################
+# 30 dias resposta adquirita 
+#############################################################
+
+set xtics 100
+set ytics 3
+set xrange [-20:550]
+plot 'output/30D_adq_vaso_linf/L.dat' u 0:6 w points title 'Antigen'
+
+set key bottom right
+set yrange [0.000001:10]
+set xrange [-10:550]
+set ytics 10
+plot 'output/30D_adq_vaso_linf/L.dat' u 0:2 lt 5 title 'Activ. macr. (Tissue)', 'output/30D_adq_vaso_linf/L.dat' u 0:4 lt 7 title 'Activ. macr. (LN)'
+
+set yrange [0.000001:500]
+plot 'output/30D_adq_vaso_linf/L.dat' u 0:4 lt 5 title 'Antibodies (Tissue)', 'output/30D_adq_vaso_linf/L.dat' u 0:5 lt 7 title 'Antibodies (LN)'
+
+set yrange [0.000001:0.02]
+set key center
+plot 'output/30D_adq_vaso_linf/T.dat' u 0:2 lt 5 title 'T cells', 'output/30D_adq_vaso_linf/B.dat' u 0:2 lt 7 title 'B cells', 'output/30D_adq_vaso_linf/P.dat' u 0:2 lt 10 title 'Plasma cells'
+
